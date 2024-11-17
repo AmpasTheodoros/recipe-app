@@ -65,7 +65,9 @@ const RecipeCard = ({ recipe, bg, badge }) => {
 				<p className='font-bold tracking-wide'>{recipe.label}</p>
 			</div>
 			<p className='my-2'>
-				{recipe.cuisineType[0].charAt(0).toUpperCase() + recipe.cuisineType[0].slice(1)} Kitchen
+				{recipe.cuisineType && recipe.cuisineType[0] 
+					? `${recipe.cuisineType[0].charAt(0).toUpperCase() + recipe.cuisineType[0].slice(1)} Kitchen`
+					: 'Various Kitchen'}
 			</p>
 
 			<div className='flex gap-2 mt-auto'>
